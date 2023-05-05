@@ -21,6 +21,7 @@ export default async function Home() {
       <h1>Index Page</h1>
       <p>Session</p>
       <p>{JSON.stringify(session)}</p>
+      Chars:
       {chars ? JSON.stringify(chars) : null}
       <div className="flex items-center justify-center gap-2">{!session ? <LoginButton /> : <LogoutButton />}</div>
     </main>
