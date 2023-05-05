@@ -1,176 +1,176 @@
 export const charData = [
   {
-    class: "Death Knight",
+    class: 'Death Knight',
     specs: [
       {
-        name: "Blood",
-        role: "Tank",
+        name: 'Blood',
+        role: 'Tank',
       },
       {
-        name: "Frost",
-        role: "Mdps",
+        name: 'Frost',
+        role: 'Mdps',
       },
       {
-        name: "Unholy",
-        role: "Mdps",
+        name: 'Unholy',
+        role: 'Mdps',
       },
     ],
   },
   {
-    class: "Druid",
+    class: 'Druid',
     specs: [
       {
-        name: "Balance",
-        role: "Rdps",
+        name: 'Balance',
+        role: 'Rdps',
       },
       {
-        name: "Feral Combat",
-        role: "Mdps",
+        name: 'Feral Combat',
+        role: 'Mdps',
       },
       {
-        name: "Restoration",
-        role: "Healer",
+        name: 'Restoration',
+        role: 'Healer',
       },
       {
-        name: "Guardian",
-        role: "Tank",
+        name: 'Guardian',
+        role: 'Tank',
       },
     ],
   },
   {
-    class: "Hunter",
+    class: 'Hunter',
     specs: [
       {
-        name: "Beast Mastery",
-        role: "Rdps",
+        name: 'Beast Mastery',
+        role: 'Rdps',
       },
       {
-        name: "Marksmanship",
-        role: "Rdps",
+        name: 'Marksmanship',
+        role: 'Rdps',
       },
       {
-        name: "Survival",
-        role: "Mdps",
+        name: 'Survival',
+        role: 'Mdps',
       },
     ],
   },
   {
-    class: "Mage",
+    class: 'Mage',
     specs: [
       {
-        name: "Arcane",
-        role: "Rdps",
+        name: 'Arcane',
+        role: 'Rdps',
       },
       {
-        name: "Fire",
-        role: "Rdps",
+        name: 'Fire',
+        role: 'Rdps',
       },
       {
-        name: "Frost",
-        role: "Rdps",
+        name: 'Frost',
+        role: 'Rdps',
       },
     ],
   },
   {
-    class: "Paladin",
+    class: 'Paladin',
     specs: [
       {
-        name: "Holy",
-        role: "Healer",
+        name: 'Holy',
+        role: 'Healer',
       },
       {
-        name: "Protection",
-        role: "Tank",
+        name: 'Protection',
+        role: 'Tank',
       },
       {
-        name: "Retribution",
-        role: "Mdps",
+        name: 'Retribution',
+        role: 'Mdps',
       },
     ],
   },
   {
-    class: "Priest",
+    class: 'Priest',
     specs: [
       {
-        name: "Discipline",
-        role: "Healer",
+        name: 'Discipline',
+        role: 'Healer',
       },
       {
-        name: "Holy",
-        role: "Healer",
+        name: 'Holy',
+        role: 'Healer',
       },
       {
-        name: "Shadow",
-        role: "Rdps",
+        name: 'Shadow',
+        role: 'Rdps',
       },
     ],
   },
   {
-    class: "Rogue",
+    class: 'Rogue',
     specs: [
       {
-        name: "Assassination",
-        role: "Mdps",
+        name: 'Assassination',
+        role: 'Mdps',
       },
       {
-        name: "Combat",
-        role: "Mdps",
+        name: 'Combat',
+        role: 'Mdps',
       },
       {
-        name: "Subtlety",
-        role: "Mdps",
+        name: 'Subtlety',
+        role: 'Mdps',
       },
     ],
   },
   {
-    class: "Shaman",
+    class: 'Shaman',
     specs: [
       {
-        name: "Elemental",
-        role: "Rdps",
+        name: 'Elemental',
+        role: 'Rdps',
       },
       {
-        name: "Enhancement",
-        role: "Mdps",
+        name: 'Enhancement',
+        role: 'Mdps',
       },
       {
-        name: "Restoration",
-        role: "Healer",
+        name: 'Restoration',
+        role: 'Healer',
       },
     ],
   },
   {
-    class: "Warlock",
+    class: 'Warlock',
     specs: [
       {
-        name: "Affliction",
-        role: "Rdps",
+        name: 'Affliction',
+        role: 'Rdps',
       },
       {
-        name: "Demonology",
-        role: "Rdps",
+        name: 'Demonology',
+        role: 'Rdps',
       },
       {
-        name: "Destruction",
-        role: "Rdps",
+        name: 'Destruction',
+        role: 'Rdps',
       },
     ],
   },
   {
-    class: "Warrior",
+    class: 'Warrior',
     specs: [
       {
-        name: "Arms",
-        role: "Mdps",
+        name: 'Arms',
+        role: 'Mdps',
       },
       {
-        name: "Fury",
-        role: "Mdps",
+        name: 'Fury',
+        role: 'Mdps',
       },
       {
-        name: "Protection",
-        role: "Tank",
+        name: 'Protection',
+        role: 'Tank',
       },
     ],
   },
-];
+]

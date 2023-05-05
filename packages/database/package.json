@@ -15,7 +15,7 @@
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx src/seed.ts",
-    "dev": "tsup --watch",
+    "dev": "tsup",
     "format": "npx prisma format",
     "generate": "npx prisma generate",
     "prebuild": "npx npm run generate",

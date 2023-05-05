@@ -27,6 +27,9 @@ packages/database/.env
 packages/database/dist
 packages/database/prisma/dev.db
 
+# apps/discord-bot
+apps/discord-bot/dist
+
 
 # turbo
 .turbo

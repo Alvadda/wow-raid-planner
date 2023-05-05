@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx nodemon src/index.ts",
+    "build": "tsc",
+    "command:deploy": "tsx src/deploy-commands.ts"
+  },
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.9",
+    "prettier": "^2.8.7",
+    "database": "*",
+    "tsconfig": "*",
+    "typescript": "^5.0.2",
+    "tsx": "^3.7.1"
+  }
+}
