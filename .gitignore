@@ -30,6 +30,9 @@ packages/database/prisma/dev.db
 # apps/discord-bot
 apps/discord-bot/dist
 
+# apps/web
+apps/web/.next
+
 
 # turbo
 .turbo
