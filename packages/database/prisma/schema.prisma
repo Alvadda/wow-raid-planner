@@ -1,0 +1,158 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id              String           @id @default(uuid())
+  discordId       String           @unique
+  name            String
+  createdAt       DateTime         @default(now())
+  characters      Character[]
+  communityAdmins CommunityAdmin[]
+}
+
+model Character {
+  id             String          @id @default(uuid())
+  name           String
+  createdAt      DateTime        @default(now())
+  userId         String
+  mainSpecId     String
+  offSpecId      String
+  serverId       String
+  factionId      String
+  communityChars CommunityChar[]
+  signUps        RaidSigned[]
+  absences       RaidAbsence[]
+
+  mainSpec Specialization @relation(name: "mainSpec", fields: [mainSpecId], references: [id])
+  offSpec  Specialization @relation(name: "offSpec", fields: [offSpecId], references: [id])
+  user     User           @relation(fields: [userId], references: [id])
+  server   Server         @relation(fields: [serverId], references: [id])
+  faction  Faction        @relation(fields: [factionId], references: [id])
+}
+
+model Specialization {
+  id       String      @id @default(uuid())
+  name     String
+  classId  String
+  roleId   String
+  mainSpec Character[] @relation(name: "mainSpec")
+  offSpec  Character[] @relation(name: "offSpec")
+
+  class Class @relation(fields: [classId], references: [id])
+  role  Role  @relation(fields: [roleId], references: [id])
+}
+
+model Role {
+  id              String           @id @default(uuid())
+  name            String
+  Specializations Specialization[]
+}
+
+model Class {
+  id              String           @id @default(uuid())
+  name            String
+  Specializations Specialization[]
+}
+
+model Community {
+  id              String           @id @default(uuid())
+  name            String
+  createdAt       DateTime         @default(now())
+  serverId        String
+  factionId       String
+  communityAdmins CommunityAdmin[]
+  communityChars  CommunityChar[]
+  raids           Raid[]
+
+  faction Faction @relation(fields: [factionId], references: [id])
+  server  Server  @relation(fields: [serverId], references: [id])
+}
+
+model Server {
+  id          String      @id @default(uuid())
+  name        String
+  regionId    String
+  Characters  Character[]
+  Communities Community[]
+
+  region Region @relation(fields: [regionId], references: [id])
+}
+
+model Faction {
+  id          String      @id @default(uuid())
+  name        String
+  Characters  Character[]
+  Communities Community[]
+}
+
+model Raid {
+  id          String        @id @default(uuid())
+  title       String
+  description String
+  time        DateTime
+  createdAt   DateTime      @default(now())
+  communityId String
+  signUps     RaidSigned[]
+  absences    RaidAbsence[]
+
+  community Community @relation(fields: [communityId], references: [id])
+}
+
+model Region {
+  id     String   @id @default(uuid())
+  name   String
+  server Server[]
+}
+
+model CommunityAdmin {
+  createdAt  DateTime @default(now())
+  userId     String
+  comunityId String
+
+  user      User      @relation(fields: [userId], references: [id])
+  community Community @relation(fields: [comunityId], references: [id])
+
+  @@id([userId, comunityId])
+}
+
+model CommunityChar {
+  createdAt   DateTime @default(now())
+  characterId String
+  comunityId  String
+
+  character Character @relation(fields: [characterId], references: [id])
+  community Community @relation(fields: [comunityId], references: [id])
+
+  @@id([characterId, comunityId])
+}
+
+model RaidSigned {
+  createdAt   DateTime @default(now())
+  characterId String
+  raidId      String
+
+  character Character @relation(fields: [characterId], references: [id])
+  raid      Raid      @relation(fields: [raidId], references: [id])
+
+  @@id([characterId, raidId])
+}
+
+model RaidAbsence {
+  createdAt   DateTime @default(now())
+  characterId String
+  raidId      String
+
+  character Character @relation(fields: [characterId], references: [id])
+  raid      Raid      @relation(fields: [raidId], references: [id])
+
+  @@id([characterId, raidId])
+}

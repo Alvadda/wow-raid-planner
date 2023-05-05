@@ -2,16 +2,9 @@
 
 # dependencies
 node_modules
-.pnp
-.pnp.js
 
 # testing
 coverage
-
-# next.js
-.next/
-out/
-build
 
 # misc
 .DS_Store
@@ -29,8 +22,15 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# packages/database
+packages/database/.env
+packages/database/dist
+packages/database/prisma/dev.db
+
+
 # turbo
 .turbo
 
 # vercel
 .vercel
+
