@@ -8,13 +8,9 @@ type CreateCharacterParams = {
 }
 
 export const createCharacter = async ({ discordUser, character }: CreateCharacterParams) => {
-  let user = await prisma.user.findFirst({ where: { discordId: discordUser.id } })
+  const account = await prisma.account.findFirst({ where: { providerAccountId: discordUser.id }, include: { user: true } })
 
-  if (!user) {
-    user = await prisma.user.create({ data: { discordId: discordUser.id, name: discordUser.username } })
-  }
-
-  if (!user) throw new Error('Could not create or find user')
+  if (!account) throw new Error('Could not create or find user')
 
   console.log(character)
 
@@ -26,7 +22,7 @@ export const createCharacter = async ({ discordUser, character }: CreateCharacte
         offSpecId: character.offSpecId,
         serverId: character.serverId,
         factionId: character.factionId,
-        userId: user.id,
+        userId: account.userId,
       },
     })
   } catch (e) {
