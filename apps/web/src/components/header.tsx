@@ -9,12 +9,16 @@ export const Header = async () => {
   const profilePicture = session?.user?.image
 
   return (
-    <div className="bg-neutral-800 shadow-xl flex justify-end">
-      <nav className="flex justify-center gap-3">
-        <Link href={'/'}>Dashboard</Link>
-        <Link href={'/'}>Test</Link>
+    <div className="bg-gray-1000 shadow-xl flex justify-end align-middle gap-5 p-2">
+      <nav className="flex justify-center gap-3 align-middle">
+        <Link className="flex items-center" href={'/'}>
+          Dashboard
+        </Link>
+        <Link className="flex items-center" href={'/'}>
+          Test
+        </Link>
       </nav>
-      {profilePicture ? <Image className="rounded-full" alt="user profile picture" src={profilePicture} width={60} height={60} /> : null}
+      {profilePicture ? <Image className="rounded-full" alt="user profile picture" src={profilePicture} width={50} height={50} /> : null}
     </div>
   )
 }
