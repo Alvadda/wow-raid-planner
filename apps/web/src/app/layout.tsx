@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className + ' h-screen flex flex-col bg-neutral-800 text-white'}>
+      <body className={inter.className + ' h-screen flex flex-col bg-zinc-800 text-white'}>
         <NextAuthProvider>
           <header className="shrink-0">
             {/* @ts-expect-error Server Component */}

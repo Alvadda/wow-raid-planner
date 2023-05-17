@@ -2,7 +2,6 @@ import { getServerSession } from 'next-auth'
 
 import { prisma, Character } from 'database'
 import { authOptions } from './api/auth/[...nextauth]/route'
-import { LoginButton, LogoutButton } from '@/components/buttons'
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
@@ -24,7 +23,6 @@ export default async function Home() {
       <p>{JSON.stringify(session)}</p>
       Chars:
       {chars ? JSON.stringify(chars) : null}
-      <div className="">{!session ? <LoginButton /> : <LogoutButton />}</div>
     </div>
   )
 }
